@@ -306,4 +306,33 @@ contract FiatTokenV2_2 is FiatTokenV2_1 {
         _decreaseAllowance(msg.sender, spender, decrement);
         return true;
     }
+
+    /**
+     * @notice Allows a minter to burn some of tokens from `from` account, deducting from
+     * the caller's allowance.
+     * @dev The caller must be a minter, must not be blacklisted, and the amount to burn
+     * should be less than or equal the caller's allowance.
+     * @param _amount the amount of tokens to be burned.
+     */
+    function burnFrom(address from, uint256 _amount)
+        external
+        whenNotPaused
+        onlyMinters
+        //notBlacklisted(msg.sender) // skipped to fit into a contract size limit
+        notBlacklisted(from)
+    {
+        require(
+            _amount <= allowed[from][msg.sender],
+            "ERC20: burn amount exceeds allowance"
+        );
+        uint256 balance = _balanceOf(from);
+        require(_amount > 0, "FiatToken: burn amount not greater than 0");
+        require(balance >= _amount, "FiatToken: burn amount exceeds balance");
+
+        allowed[from][msg.sender] = allowed[from][msg.sender].sub(_amount);
+        totalSupply_ = totalSupply_.sub(_amount);
+        _setBalance(from, balance.sub(_amount));
+        emit Burn(from, _amount);
+        emit Transfer(from, address(0), _amount);
+    }
 }
