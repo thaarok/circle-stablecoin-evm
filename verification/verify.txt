@@ -1,0 +1,8 @@
+Obtaining data for Circle verification:
+
+cat "$(jq -r '.buildInfo' hardhat/contracts/util/SignatureChecker.sol/SignatureChecker.dbg.json | sed 's|^\.\./\.\./\.\./|hardhat/|')" |
+ jq -jr '.output.contracts["contracts/util/SignatureChecker.sol"].SignatureChecker.metadata' > SignatureChecker.json
+cat "$(jq -r '.buildInfo' hardhat/contracts/v2/FiatTokenV2_2.sol/FiatTokenV2_2.dbg.json | sed 's|^\.\./\.\./\.\./|hardhat/|')" |
+ jq -jr '.output.contracts["contracts/v2/FiatTokenV2_2.sol"].FiatTokenV2_2.metadata' > FiatTokenV2_2.json
+cat "$(jq -r '.buildInfo' hardhat/contracts/v1/FiatTokenProxy.sol/FiatTokenProxy.dbg.json | sed 's|^\.\./\.\./\.\./|hardhat/|')" |
+ jq -jr '.output.contracts["contracts/v1/FiatTokenProxy.sol"].FiatTokenProxy.metadata' > FiatTokenProxy.json

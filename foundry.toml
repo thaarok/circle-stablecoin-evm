@@ -40,3 +40,6 @@ extra-output-files = [
 [rpc_endpoints]
 testnet = "${TESTNET_RPC_URL}"
 mainnet = "${MAINNET_RPC_URL}"
+
+[etherscan]
+mainnet = { chain = 146, key = "GAUQI1JG2WMFNRFKRS2PNXR4SB9C6HCTPS", url = "https://api.sonicscan.org/api" }

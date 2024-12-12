@@ -1,0 +1,52 @@
+Initial deployment
+******************
+commit f64f01f93ea4e4b3a88be1de716fc0ada88f798c (HEAD, tag: release-2024-06-21T005221)
+
+----
+
+yarn forge:broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+yarn run v1.22.19
+$ yarn forge:simulate --broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+$ forge script -vv --gas-estimate-multiplier $(dotenv -p GAS_MULTIPLIER) --broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+[⠒] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Return ==
+0: contract FiatTokenV2_2 0x229e64252e2901A424600e22C28A722404D92dCC
+1: contract MasterMinter 0xBE9f04237F6603D92Fee25E36AB5dd4Fd263b954
+2: contract FiatTokenProxy 0x29219dd400f2Bf60E5a23d13Be72B486D4038894
+
+== Logs ==
+  TOKEN_NAME: 'Bridged USDC (Sonic Labs)'
+  TOKEN_SYMBOL: 'USDC.e'
+  TOKEN_CURRENCY: 'USD'
+  TOKEN_DECIMALS: '6'
+  FIAT_TOKEN_IMPLEMENTATION_ADDRESS: '0x0000000000000000000000000000000000000000'
+  PROXY_ADMIN_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  MASTER_MINTER_OWNER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  OWNER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  PAUSER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  BLACKLISTER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 146
+
+Estimated gas price: 160 gwei
+
+Estimated total gas used for script: 8880294
+
+Estimated amount required: 1.42084704 ETH
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+Total Paid: 0.834106463 ETH (8098121 gas * avg 103 gwei)
+
+Done in 9.11s.
+
+----
+
