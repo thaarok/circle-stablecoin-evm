@@ -1,0 +1,147 @@
+Initial deployment
+******************
+commit f64f01f93ea4e4b3a88be1de716fc0ada88f798c (HEAD, tag: release-2024-06-21T005221)
+
+$ yarn forge:broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+yarn run v1.22.19
+$ yarn forge:simulate --broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+$ forge script -vv --gas-estimate-multiplier $(dotenv -p GAS_MULTIPLIER) --broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+[⠒] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Return ==
+0: contract FiatTokenV2_2 0xde95B31cAE2AE5a63b9Ae23252686684F29e09B3
+1: contract MasterMinter 0xAD9ed0a257a5DdBC39f625f2619b4Cb036570393
+2: contract FiatTokenProxy 0x391071Fe567d609E4af9d32de726d4C33679C7e2
+
+== Logs ==
+  TOKEN_NAME: 'Bridged USDC (Sonic Labs)'
+  TOKEN_SYMBOL: 'USDC.e'
+  TOKEN_CURRENCY: 'USD'
+  TOKEN_DECIMALS: '6'
+  FIAT_TOKEN_IMPLEMENTATION_ADDRESS: '0x0000000000000000000000000000000000000000'
+  PROXY_ADMIN_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  MASTER_MINTER_OWNER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  OWNER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  PAUSER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  BLACKLISTER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 146
+
+Estimated gas price: 5 gwei
+
+Estimated total gas used for script: 8880307
+
+Estimated amount required: 0.044401535 ETH
+
+==========================
+##
+Sending transactions [0 - 13].
+⠤ [00:00:00] [###############################################################################################################################################################################################################################################################################] 14/14 txes (0.0s)##
+Waiting for receipts.
+⠠ [00:00:06] [###########################################################################################################################################################################################################################################################################] 14/14 receipts (0.0s)
+##### 146
+✅  [Success]Hash: 0xb5044114fb21af8ac523034be841c49c32c43d492d8c7c90dcb0ecc42fa02b94
+Contract Address: 0xb90f6a672aeE6F895e5aC50aD3A1A88868B502fE
+Block: 212920
+Paid: 0.001726512 ETH (431628 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xec0be8e63dd7571d02b36af1feec0bee2060f2be9dfa0ae4f6a7e4999bacbc11
+Contract Address: 0xde95B31cAE2AE5a63b9Ae23252686684F29e09B3
+Block: 212920
+Paid: 0.020655052 ETH (5163763 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xd28659c7af5c16101b5a74388e06d14dba67d13ee689c41f56a033731346ff6f
+Block: 212920
+Paid: 0.000435768 ETH (108942 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xf6275f1433f89fbf5e83327387d3c9e497e2ce31c97f0a5157592b3d3f7af82e
+Block: 212920
+Paid: 0.000372028 ETH (93007 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xb0b1d698e661087a88917b985767e1b32e10a2f7a57de16e87c2ccbb9fd1b619
+Block: 212920
+Paid: 0.000201508 ETH (50377 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0x79de2557a0b9a97108eece1f1017ca52932665cde5614047607032e2865c4163
+Block: 212920
+Paid: 0.000141608 ETH (35402 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xd7e66f2ae6796133740f67663359d8daf1334823e50f14511288c86f8adf86f0
+Contract Address: 0x391071Fe567d609E4af9d32de726d4C33679C7e2
+Block: 212920
+Paid: 0.00198962 ETH (497405 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xa0da46195c978a335063eca5dec7c3749928eea3a929be0086a947f4b9fdf17c
+Contract Address: 0xAD9ed0a257a5DdBC39f625f2619b4Cb036570393
+Block: 212920
+Paid: 0.005032928 ETH (1258232 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xee75032f5c83692f29f450c7a5d4e74ded8468924f3d957d184a6ea70958e0bd
+Block: 212920
+Paid: 0.000116072 ETH (29018 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0x2eb310d37df21cc53a137d7af116ff9a13de699c0511167749c8c58021fcf0df
+Block: 212920
+Paid: 0.000114912 ETH (28728 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0x77e951dad725f26a4f68a4cd646fb7ef694b8b9aec6b9e6f49c18ec715facabb
+Block: 212920
+Paid: 0.000865296 ETH (216324 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0xc029cd7fd22148124bf19debf46d2b8eb377fe76dcd536d9fab7ba65d1235a23
+Block: 212920
+Paid: 0.000330752 ETH (82688 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0x27847be3da7fb684fc0a97bc58e3ce273d1c17556b81f2ed566a388f89ff5dff
+Block: 212920
+Paid: 0.000230216 ETH (57554 gas * 4 gwei)
+
+
+##### 146
+✅  [Success]Hash: 0x7b873329d7cdeab092d1c8cc3667c4a8613b9172f531c80adb40f8f8b283029f
+Block: 212920
+Paid: 0.000180264 ETH (45066 gas * 4 gwei)
+
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+Total Paid: 0.032392536 ETH (8098134 gas * avg 4 gwei)
+
+Transactions saved to: /home/***/***/stablecoin-evm/broadcast/deploy-fiat-token.s.sol/146/run-latest.json
+
+Sensitive values saved to: /home/***/***/stablecoin-evm/cache/foundry/deploy-fiat-token.s.sol/146/run-latest.json
+
+Done in 9.12s.
+
