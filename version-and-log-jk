@@ -2,7 +2,7 @@ Initial deployment
 ******************
 commit f64f01f93ea4e4b3a88be1de716fc0ada88f798c (HEAD, tag: release-2024-06-21T005221)
 
-----
+---- USDC ----
 
 yarn forge:broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
 yarn run v1.22.19
@@ -48,5 +48,54 @@ Total Paid: 0.834106463 ETH (8098121 gas * avg 103 gwei)
 
 Done in 9.11s.
 
-----
+---- EURC ----
 
+yarn forge:broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+yarn run v1.22.19
+$ yarn forge:simulate --broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+$ forge script -vv --gas-estimate-multiplier $(dotenv -p GAS_MULTIPLIER) --broadcast scripts/deploy/deploy-fiat-token.s.sol --rpc-url mainnet
+[⠒] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Return ==
+0: contract FiatTokenV2_2 0x23Af4836dD12e9C40269965eB41A88aEfD544C1a
+1: contract MasterMinter 0x589cfD082B670998F4181cc6007931966F94BEC7
+2: contract FiatTokenProxy 0xe715cbA7B5cCb33790ceBFF1436809d36cb17E57
+
+== Logs ==
+  TOKEN_NAME: 'Bridged EURC (Sonic Labs)'
+  TOKEN_SYMBOL: 'EURC.e'
+  TOKEN_CURRENCY: 'EUR'
+  TOKEN_DECIMALS: '6'
+  FIAT_TOKEN_IMPLEMENTATION_ADDRESS: '0x0000000000000000000000000000000000000000'
+  PROXY_ADMIN_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  MASTER_MINTER_OWNER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  OWNER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  PAUSER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+  BLACKLISTER_ADDRESS: '0x45fbf50f13F4491ca1F5931F24525c3583CfAf15'
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 146
+
+Estimated gas price: 160 gwei
+
+Estimated total gas used for script: 8865765
+
+Estimated amount required: 1.4185224 ETH
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+Total Paid: 0.833956907 ETH (8096669 gas * avg 103 gwei)
+
+Transactions saved to: /home/jk/Fantom/circle-stablecoin-evm/broadcast/deploy-fiat-token.s.sol/146/run-latest.json
+
+Sensitive values saved to: /home/jk/Fantom/circle-stablecoin-evm/cache/foundry/deploy-fiat-token.s.sol/146/run-latest.json
+
+Done in 8.98s.
+
+----
